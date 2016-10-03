@@ -43,6 +43,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
     coderay (1.1.1)
@@ -53,6 +54,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    connection_pool (2.2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -60,6 +62,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
+    foreman (0.82.0)
+      thor (~> 0.19.1)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (1.5.3)
@@ -101,9 +105,17 @@ GEM
       activesupport (= 4.1.6)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    rainbow (2.1.0)
     rake (11.2.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    react_on_rails (6.1.1)
+      addressable
+      connection_pool
+      execjs (~> 2.5)
+      foreman
+      rails (>= 3.2)
+      rainbow (~> 2.1)
     rspec-core (3.5.2)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -164,6 +176,7 @@ DEPENDENCIES
   pry
   rails (= 4.1.6)
   rails_lti2_provider!
+  react_on_rails (~> 6)
   rspec-rails (= 3.5.1)
   sass-rails (~> 4.0.2)
   sdoc
