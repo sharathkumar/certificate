@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Certificate</title>
+  
+</head>
+<body>
+<div class="wrapper">
+  <div class="container">
+
+  <!-- <ul class="tabs">
+    <li class="tab-link current" data-tab="tab-1">Certificate</li>
+    <li class="tab-link" data-tab="tab-2">Details</li> 
+  </ul> -->
+
+  <div id="tab-1" class="tab-content current"> 
+  <h4 class="crt-hdng"> Include Certificate</h4>
+  <label class="switch">
+  <input class="switch-input" type="checkbox" />
+  <span class="switch-label" data-on="On" data-off="Off"></span> 
+  <span class="switch-handle"></span> 
+</label>
+  <h4 class="crt-hdng"> Add Certificate Name</h4>
+  <input type="text" class="srch-bx" placeholder="Search Certificate"/>
+  
+  <h4 class="crt-hdng">Select Template</h4> 
+  <ul class="crtfc-lst">
+  <li>
+    <div class="templ-itm-bx">
+    <div class="crt-img">
+      <%= image_tag "certf1.png" %>
+      <label><a href="#modal" load-url="http://localhost:3001"><%= image_tag "img.png" %></a></label>
+    </div>
+      <div class="dtls-crt">
+      <label><input type="radio" /> Defualt</label>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="templ-itm-bx">
+    <div class="crt-img">
+      <%= image_tag "certf2.png" %>
+      <label><a href="#modal" load-url="http://localhost:3001/xml_builder"><%= image_tag "img.png" %></a></label>
+    </div>
+      <div class="dtls-crt">
+      <label><input type="radio" /> Traditional</label>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="templ-itm-bx">
+    <div class="crt-img">
+      <%= image_tag "html&css.png" %>
+      <label><a href="#modal" load-url="http://localhost:3001"><%= image_tag "img.png" %></a></label>
+    </div>
+      <div class="dtls-crt">
+      <label><input type="radio" /> Custom HTML/CSS</label>
+      </div>
+    </div>
+  </li>
+  </ul>
+  <input type="submit" value="Save Certificate"  class="sve-crt"/>
+  </div>
+  <div id="tab-2" class="tab-content"> 
+  Details
+  </div> 
+
+  <!-- ----------------------- -->
+
+  <div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+    <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+    <div>
+      <h2 id="modal1Title">Remodal</h2>
+      <p id="modal1Desc">
+        <div id="siteloader"> 
+          <!-- <object type="text/html" data="http://validator.w3.org/" width="100%" height="600px" style="overflow:auto;border:5px ridge blue">
+          </object> -->
+        </div>
+      </p>
+    </div>
+    <br>
+    <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+    <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+  </div>
+
+  <script>
+    $(document).on('opening', '.remodal', function () {
+      console.log('opening');
+      $("#siteloader").html('<object type="text/html" data="http://localhost:3001" width="80%" height="400px" style="overflow:auto;border:5px ridge blue"/>');
+    });
+
+    $(document).on('opened', '.remodal', function () {
+      console.log('opened');
+    });
+
+    $(document).on('closing', '.remodal', function (e) {
+      console.log('closing' + (e.reason ? ', reason: ' + e.reason : ''));
+    });
+
+    $(document).on('closed', '.remodal', function (e) {
+      console.log('closed' + (e.reason ? ', reason: ' + e.reason : ''));
+    });
+
+    $(document).on('confirmation', '.remodal', function () {
+      console.log('confirmation');
+    });
+
+    $(document).on('cancellation', '.remodal', function () {
+      console.log('cancellation');
+    });
+
+  //  Usage:
+  //  $(function() {
+  //
+  //    // In this case the initialization function returns the already created instance
+  //    var inst = $('[data-remodal-id=modal]').remodal();
+  //
+  //    inst.open();
+  //    inst.close();
+  //    inst.getState();
+  //    inst.destroy();
+  //  });
+
+    //  The second way to initialize:
+    $('[data-remodal-id=modal2]').remodal({
+      modifier: 'with-red-theme'
+    });
+  </script>
+
+  <!-- ----------------------- -->
+
+</div><!-- container -->
+</div>
+</body>
+</html>
