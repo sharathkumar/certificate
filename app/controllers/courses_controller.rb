@@ -1,8 +1,8 @@
-class CertificatesController < ApplicationController
+class CoursesController < ApplicationController
   include RailsLti2Provider::ControllerHelpers
 
   skip_before_action :verify_authenticity_token
-  before_filter :lti_authentication, except: [:youtube, :signed_content_item_request, :certificates, :courses]
+  # before_filter :lti_authentication
 
   rescue_from RailsLti2Provider::LtiLaunch::Unauthorized do |ex|
     @error = 'Authentication failed with: ' + case ex.error
@@ -20,35 +20,10 @@ class CertificatesController < ApplicationController
     render :show, status: 200
   end
 
-  def show
-    render "courses"
-    # process_message
-    # render text: "Success Loaing LTI tool"
+  def index
   end
 
-  def certificates
-  end
-
-  def courses
-
-  end
-
-  def content_item_selection
-    process_message
-  end
-
-  def signed_content_item_request
-    key = 'key' # this should ideally be sent up via api call
-    launch_url = params.delete('return_url')
-    tool = RailsLti2Provider::Tool.where(uuid: 'key').last
-    message = IMS::LTI::Models::Messages::Message.generate(request.request_parameters.merge(oauth_consumer_key: key))
-    message.launch_url = launch_url
-    @launch_params = { launch_url: message.launch_url, signed_params: message.signed_post_params(tool.shared_secret) }
-    render 'message/signed_content_item_form'
-  end
-
-  def youtube
-    redirect_to params[:youtube_url]
+  def basic_lti_launch
   end
 
   private

@@ -11,8 +11,8 @@ messages:
   - type: basic-lti-launch-request
     route:
       path: "/default"
-      controller: "certificates"
-      action: "show"
+      controller: "courses"
+      action: "index"
 ### List of parameters ###
 # parameters:
 #   - name: context_type #the name of the parameter
