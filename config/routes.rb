@@ -1,8 +1,8 @@
-Catalog::Application.routes.draw do
+Certificate::Application.routes.draw do
   
   # Courses routes
   # =================================
-  get 'courses', to: 'courses#index'
+  get 'certificates', to: 'certificates#index'
 
   # LTI Implementation related routes
   # =================================

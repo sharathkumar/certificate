@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/rivernate/rails_lti2_provider.git
+  revision: 42ea6bad1c94a4675329ffc710d8dfa9a02a8321
+  ref: 42ea6bad1c94a4675329ffc710d8dfa9a02a8321
+  specs:
+    rails_lti2_provider (0.0.1)
+      ims-lti (~> 2.0.0.beta.34)
+      rails (~> 4.1.6)
+
 PATH
   remote: vendor/gems/ims-lti-2.0.x
   specs:
@@ -6,13 +15,6 @@ PATH
       faraday (~> 0.8)
       faraday_middleware (~> 0.8)
       simple_oauth (= 0.2)
-
-PATH
-  remote: vendor/gems/rails_lti2_provider
-  specs:
-    rails_lti2_provider (0.0.1)
-      ims-lti (~> 2.0.0.beta.34)
-      rails (~> 4.1.6)
 
 GEM
   remote: https://rubygems.org/

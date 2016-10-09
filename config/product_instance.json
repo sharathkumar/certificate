@@ -3,7 +3,7 @@
     "product_info": {
         "product_version": "1.0",
         "product_name": {
-            "default_value": "Catalog",
+            "default_value": "Certificate",
             "key": "tool.name"
         },
         "product_family": {

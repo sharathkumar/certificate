@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Catalog::Application.load_tasks
+Certificate::Application.load_tasks

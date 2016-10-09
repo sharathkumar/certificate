@@ -1,17 +1,17 @@
 code: default
 name:
-  default_value: Catalog
+  default_value: Certificate
   key: default.name
 
 description:
-  default_value: Catalog Launch
+  default_value: Certificate Launch
   key: default.description
 
 messages:
   - type: basic-lti-launch-request
     route:
       path: "/default"
-      controller: "courses"
+      controller: "certificates"
       action: "index"
 ### List of parameters ###
 # parameters:

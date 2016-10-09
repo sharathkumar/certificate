@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.getJSON demo</title>
+  <style>
+  img {
+    height: 100px;
+    float: left;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<h1 class="alert alert-info this-works"></h1>
+<%#= react_component("HelloWorldApp", props: @hello_world_props, prerender: false) %>
+<%= react_component("Certificate", props: { source: "http://admin.canvas:3000/api/v1/courses?access_token=FZx6oE8r4cgyUfvPK86MUbKpvphJpgJGIwgOfF9O0ipKAvcqZp8q592ma3eNm9WN"}, prerender: false) %>
+ 
+</body>
+</html>
