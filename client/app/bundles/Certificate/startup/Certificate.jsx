@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactOnRails from 'react-on-rails';
 
-import EditCertificate from '../containers/EditCertificate';
+import CertificateForm from '../containers/CertificateForm';
 
 const Certificate = (props) => (
-  <EditCertificate {...props} />
+  <CertificateForm {...props} />
 );
 
 // This is how react_on_rails can see the HelloWorldApp in the browser.

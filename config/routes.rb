@@ -2,8 +2,9 @@ Certificate::Application.routes.draw do
   
   # Courses routes
   # =================================
-  get 'certificates', to: 'certificates#index'
-
+  post 'certificates', to: 'certificates#index'
+  resources :certificates
+  
   # LTI Implementation related routes
   # =================================
   post 'register', to: 'registration#register', as: :tool_registration
