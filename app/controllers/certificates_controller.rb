@@ -23,6 +23,10 @@ class CertificatesController < ApplicationController
   def index
   end
 
+  def create
+  	render json: {}, status: 200
+  end
+
   def basic_lti_launch
   	process_message
   end

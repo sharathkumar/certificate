@@ -3,14 +3,31 @@ import React, { PropTypes } from 'react';
 export default class CertificateForm extends React.Component {
 
   constructor(props) {
-    super(props);
-    this.state = {name: ""};
+    super(props)
+    this.state = {name: ""}
+    this.onChange = this.onChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  onSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault()
-    debugger
-    alert('form submitted!')
+    var data = {
+      name: this.state.name
+    }
+    $.ajax({
+      type: 'POST',
+      url: 'certificates/create',
+      data: data
+    })
+    .done(function(data) {
+      // this.clearForm()
+      alert('certificate saved')
+    })
+    .fail(function(jqXhr) {
+      alert('certificate not saved')
+    });
+    // debugger
+    // alert('form submitted!')
   }
 
   onChange(e){
@@ -21,7 +38,7 @@ export default class CertificateForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} className="MyForm">
+      <form onSubmit={this.handleSubmit} className="MyForm">
         <div id="tab-1" className="tab-content current"> 
         <h4 className="crt-hdng"> Include Certificate</h4>
         <label className="switch">
